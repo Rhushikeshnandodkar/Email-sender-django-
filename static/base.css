@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap');
+body{
+    font-family: 'Lato', sans-serif;
+}
+.left-bar{
+  width: 16%;
+  background: white;
+  position: absolute;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 3%;
+}
+.left-bar h3{
+    font-size: 1.6rem;
+}
+.left-bar ul{
+    margin: 15% 0;
+    list-style: none;
+    padding: 0;
+}
+.left-bar ul li{
+    margin: 10% 0;
+}
+.left-bar ul li a{
+    color: gray;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.main-content{
+    background-color: rgba(230, 230, 230, 0.349);
+    height: 100vh;
+    position: absolute;
+    width: 78%;
+    right: 0;
+    top: 0%;
+    padding: 3%;
+}
+.main-content h1{
+    color: black;
+    font-size: 2rem;
+}
+.filter-section{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: white;
+    padding: 2%;
+}
+.filter-section select{
+    border: 1px solid #f9f0f0;
+    -webkit-appearance: none;
+  -moz-appearance: none;
+    font-size: 0.9rem;
+    padding: 7% 7%;
+    width: 100%;
+    background-color: white;
+    background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 20px;
+  border: 1px solid #dfdfdf;
+  align-items: center;
+}
+.filter-section .btn{
+    background-color: #04AA6D;
+    border: none;
+    font-size: 1.2rem;
+    color: white;
+}
+.sub-list{
+    width: 100%;
+}
+ table{
+    padding: 3% 0;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+table th{
+    padding: 02% 0;
+    background-color: #04AA6D;
+    font-size: 1.2rem;
+    color: white;
+}
+table tr{
+    border-bottom: 1px solid rgb(228, 225, 225);
+    border-left: 1px solid rgb(228, 225, 225);
+    border-right: 1px solid rgb(228, 225, 225);
+}
+table a{
+    color: black;
+    text-decoration: none;
+}
+table tr td{
+    padding: 2% 0;
+    font-size: 1.1rem;
+    background-color: white;
+}
+svg.green{
+    color: green;
+}
+svg.red{
+    color: red;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/base.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="left-bar">
+            <h3>Emailer</h3>
+            <ul>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Campaigns</a></li>
+                <li><a href="">Subscribers</a></li>
+                <li><a href="">Templates</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <h1>Subscribers</h1>
+        <form action="/filter" method="post">
+        {% csrf_token %}
+        <div class="filter-section">
+            <select name="label" name="cars" id="cars">
+                <option value="" selected disabled hidden>Label</option>
+               {% for i in label %}
+                <option  value="{{i.lable_name}}">{{i.lable_name}}</option>
+               {% endfor %}
+              </select>
+              <select name="group" name="cars" id="cars">
+               {% for i in group %}
+                <option value="{{i.group_name}}">{{i.group_name}}</option>
+               {% endfor %}
+              </select>
+              <select name="sector" name="cars" id="cars">
+               {% for i in sector %}
+                <option value="{{i.sector_name}}">{{i.sector_name}}</option>
+               {% endfor %}
+              </select>
+              <button type="submit" class="btn">Filter Now</button>
+        </div>
+    </form>
+    <div class="sub-list">
+        <div className="heading"><h1>Your Bookings</h1></div>
+          <table>
+            <thead>
+              <th>First Name</th>
+              <th>Email</th>
+              <th>Group</th>
+              <th>Sector</th>
+              <th>Label</th>
+              <th>Subscribed</th>
+            </thead>
+            <tbody>   
+            {% for i in all_subs %}
+            <tr>
+                <td><a href="">{{i.first_name}}</a></td>
+                <td><a href="">{{i.email}}</a></td>
+                <td><a href="">{{i.group}}</a></td>
+                <td><a href="">{{i.sector}}</a></td>
+                <td><a href="">{{i.label}}</a></td>
+                {% if i.subscription == True %}
+                <td><a href=""><svg class="green" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M437.3 30L202.7 339.3L64 200.7l-64 64L213.3 478L512 94z"/></svg></a></td>
+                {% else %}
+                 <td><a href=""><svg class="red" xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-dasharray="22" stroke-dashoffset="22" stroke-linecap="round" stroke-width="2"><path d="M19 5L5 19"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.3s" dur="0.3s" values="22;0"/></path><path d="M5 5L19 19"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="22;0"/></path></g></svg></a></td>
+                {% endif %}
+             </tr>
+            {% endfor %}     
+
+            </tbody>
+          </table>
+    </div>
+    </div>
+
+
+</body>
+</html>
