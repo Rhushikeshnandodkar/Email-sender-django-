@@ -56,7 +56,7 @@ ROOT_URLCONF = "project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],
+        "DIRS": [BASE_DIR / "templates", BASE_DIR / "files"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -71,6 +71,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "project.wsgi.application"
 
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER= 'consulthubtech@gmail.com'
+EMAIL_HOST_PASSWORD='aynl lirg rsaj rrgt'
+EMAIL_USE_TLS=True
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

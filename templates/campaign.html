@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/campaigns.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="left-bar">
+            <h3>Emailer</h3>
+            <ul>
+                <li><a href="/">Dashboard</a></li>
+                <li><a href="/campaign">Campaigns</a></li>
+                <li><a href="">Subscribers</a></li>
+                <li><a href="">Templates</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+    <div class="heading">
+        <h1>Campaigns</h1>
+        <button class="btn"><a href="http://127.0.0.1:8000/admin/app/campaignsmodel/">Create Campaign</a></button>
+    </div>
+    <div class="options-section">
+        <ul>
+            <li class="active"><a href="" >Campaigns</a></li>
+            <li><a href="">Total Campaigns</a></li>
+        </ul>
+    </div>
+    <div class="sub-list">
+       <div className="heading"><h1>Your Campaigns</h1></div>
+          <table>
+            <thead>
+              <th>First Name</th>
+              <th>Email</th>
+              <th>Group</th>
+              <th>Sector</th>
+              <th>Label</th>
+              <th>Subscribed</th>
+            </thead>
+            <tbody>   
+            {% for i in campaigns %}
+            <tr>
+                <td><a href="campdetails/{{i.id}}">{{i.campaign_name}}</a></td>
+                <td><a href="campdetails/{{i.id}}">{{i.sender}}</a></td>
+                <td><a href="campdetails/{{i.id}}">{{i.group}}</a></td>
+                <td><a href="campdetails/{{i.id}}">{{i.sector}}</a></td>
+                <td><a href="campdetails/{{i.id}}">{{i.label}}</a></td>
+                <td><a href="campdetails/{{i.id}}" class="btn">Runned</a></td>
+             </tr>
+            {% endfor %}     
+
+            </tbody>
+          </table>
+    </div>
+    </div>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../static/base.css">
+    <link rel="stylesheet" href="../static/campdetails.css">
 </head>
 <body>
     <div class="dashboard">
@@ -20,31 +20,16 @@
         </div>
     </div>
     <div class="main-content">
-        <h1>Subscribers</h1>
-        <form action="/filter" method="post">
-        {% csrf_token %}
+        <h1>Campaign Details</h1>
+    <form action="/sendemail/{{campaign.id}}" method="POST">
+    {% csrf_token %}
         <div class="filter-section">
-            <select name="label" name="cars" id="cars">
-                <option value="" selected disabled hidden>Label</option>
-               {% for i in label %}
-                <option  value="{{i.lable_name}}">{{i.lable_name}}</option>
-               {% endfor %}
-              </select>
-              <select name="group" name="cars" id="cars">
-               {% for i in group %}
-                <option value="{{i.group_name}}">{{i.group_name}}</option>
-               {% endfor %}
-              </select>
-              <select name="sector" name="cars" id="cars">
-               {% for i in sector %}
-                <option value="{{i.sector_name}}">{{i.sector_name}}</option>
-               {% endfor %}
-              </select>
-              <button type="submit" class="btn">Filter Now</button>
+              <button class="btn">Send Emails Now</button>
         </div>
-    </form>
+    </form> 
+
     <div class="sub-list">
-        <div className="heading"><h1>Your Bookings</h1></div>
+        {% comment %} <div className="heading"><h1>Your Bookings</h1></div> {% endcomment %}
           <table>
             <thead>
               <th>First Name</th>
